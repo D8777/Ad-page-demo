@@ -6,10 +6,13 @@ export const siteConfig = {
   phone: '(206) 555-0123',
   weatherAngle: 'Engineered for Pacific Northwest Rain, Road Grime & Winter Salt',
   trustBadge: 'Certified GTechniq & XPEL Studio · Airport Way S, Seattle',
+  priceNote: 'Based on compact/coupe baseline; final investment depends on vehicle size and required paint correction stages.',
+  contactReassurance: 'No spam, no robotic sales calls. Marcus texts your exact quote and bay openings in under 8 minutes.',
+  tintAddOn: { label: '+ Add Ceramic Window Tint', price: 349 },
   packages: [
-    { name: 'GTechniq Ceramic Coating', price: 895, suffix: '+', eyebrow: '01 / Paint defense', description: 'A precision-prepped coating system for daily drivers that need durable gloss through every season.', specs: ['Paint decon + iron removal', '1-stage machine polish', '5-year Carfax-registered warranty', '12-hour controlled cure'] },
-    { name: 'Full Vehicle Ceramic Tint', price: 349, suffix: '+', eyebrow: '02 / Heat control', description: 'Comfort-forward ceramic film that rejects heat without compromising visibility or a clean factory look.', specs: ['Up to 88% IR heat rejection', '99% UV block', 'Lifetime bubble guarantee', 'Same-day installation'] },
-    { name: 'Complete PNW Winter Defense', price: 1195, suffix: '+', eyebrow: '03 / Total protection', description: 'The seasonal bundle for wet roads, winter salt, and the owner who wants one confident handoff.', specs: ['Full ceramic coating system', 'Glass water-repellent seal', 'Wheel-face road salt barrier', '24-hour controlled cure'] },
+    { name: 'GTechniq Ceramic Coating', price: 895, suffix: '+', eyebrow: 'Most Popular Paint Defense', badge: 'Most Popular in Seattle', description: 'A precision-prepped coating system for daily drivers that need durable gloss through every season.', specs: ['Paint decon + iron removal', '1-stage machine polish', '5-year Carfax-registered warranty', 'Ready for pick-up after overnight climate-controlled bay cure'] },
+    { name: 'Full Vehicle Ceramic Tint', price: 349, suffix: '+', eyebrow: 'High-Performance Solar Shield', badge: '', description: 'Comfort-forward ceramic film that rejects heat without compromising visibility or a clean factory look.', specs: ['Up to 88% IR heat rejection', '99% UV block', 'Lifetime bubble guarantee', 'Same-day installation'] },
+    { name: 'Complete PNW Winter Defense', price: 1195, suffix: '+', eyebrow: 'Complete PNW Seasonal Package', badge: '', description: 'The seasonal bundle for wet roads, winter salt, and the owner who wants one confident handoff.', specs: ['Full ceramic coating system', 'Glass water-repellent seal', 'Wheel-face road salt barrier', 'Ready for pick-up after 2 nights of climate-controlled bay cure'] },
   ],
   faqs: [
     { question: 'How much does ceramic coating cost in Seattle?', answer: 'Ceramic coating in Seattle typically starts at $895 for a professionally prepared vehicle. Final pricing depends on vehicle size, paint condition, correction needs, and the selected warranty duration. Every estimate includes a visual inspection before work begins.' },
