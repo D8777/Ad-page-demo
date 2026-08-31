@@ -13,6 +13,7 @@ export function ProtectionEngine() {
   const [addTint, setAddTint] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [faq, setFaq] = useState<number | null>(0)
+  const [showTextDemo, setShowTextDemo] = useState(false)
   const selected = siteConfig.packages[goal]
   const tintPrice = addTint && goal !== 1 ? siteConfig.tintAddOn.price : 0
   const estimate = useMemo(() => ({ min: selected.price + sizes[size].add + tintPrice, max: selected.price + sizes[size].add + tintPrice + (goal === 2 ? 400 : 300) }), [goal, selected.price, size, tintPrice])
@@ -25,7 +26,7 @@ export function ProtectionEngine() {
     </header>
 
     <section className="relative mx-auto max-w-6xl px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-20"><div className="pointer-events-none absolute -right-40 top-0 size-[500px] rounded-full bg-cyan-400/10 blur-[120px]" />
-      <div className="relative max-w-3xl"><div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1.5 text-[11px] font-medium text-cyan-200"><span className="size-1.5 rounded-full bg-cyan-300 shadow-[0_0_10px_#00d2ff]" /> {siteConfig.trustBadge}</div><h1 className="text-5xl font-semibold leading-[.98] tracking-[-.055em] text-white sm:text-6xl lg:text-8xl">Best paint defense for {siteConfig.city} weather.</h1><p className="mt-7 max-w-xl text-base leading-7 text-slate-400">Experience Top-Tier Auto Detailing, Paint Protection Film, and Ceramic Coating for a Flawless, Long-Lasting Finish.</p><div className="mt-8 flex flex-wrap items-end gap-3"><a href="#estimator" className="rounded-lg bg-cyan-300 px-5 py-3 text-sm font-semibold text-[#0a0d14] transition hover:bg-cyan-200">Build my estimate</a><div className="flex flex-col gap-1"><span className="px-1 text-[10px] font-medium uppercase tracking-[.12em] text-slate-500">Got questions?</span><a href={`sms:${siteConfig.phone}`} className="rounded-lg border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-slate-500"><MessageSquare className="mr-2 inline" size={16} /> Text an expert</a></div></div></div>
+      <div className="relative max-w-3xl"><div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1.5 text-[11px] font-medium text-cyan-200"><span className="size-1.5 rounded-full bg-cyan-300 shadow-[0_0_10px_#00d2ff]" /> {siteConfig.trustBadge}</div><h1 className="text-5xl font-semibold leading-[.98] tracking-[-.055em] text-white sm:text-6xl lg:text-8xl">Best paint defense for {siteConfig.city} weather.</h1><p className="mt-7 max-w-xl text-base leading-7 text-slate-400">Experience Top-Tier Auto Detailing, Paint Protection Film, and Ceramic Coating for a Flawless, Long-Lasting Finish.</p><div className="mt-8 flex flex-wrap items-end gap-3"><a href="#estimator" className="rounded-lg bg-cyan-300 px-5 py-3 text-sm font-semibold text-[#0a0d14] transition hover:bg-cyan-200">Build my estimate</a><div className="flex flex-col gap-1"><span className="px-1 text-[10px] font-medium uppercase tracking-[.12em] text-slate-500">Got questions?</span><button type="button" onClick={() => setShowTextDemo(true)} className="rounded-lg border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-slate-500"><MessageSquare className="mr-2 inline" size={16} /> Text an expert</button></div></div></div>
       <div className="mt-14 grid grid-cols-1 gap-3 border-t border-slate-800 pt-5 sm:grid-cols-3"><Trust icon={<ShieldCheck />} text="Certified installers" /><Trust icon={<Sparkles />} text="Clean handoff guarantee" /><Trust icon={<Check />} text="Carfax-registered warranties" /></div>
     </section>
 
@@ -38,6 +39,8 @@ export function ProtectionEngine() {
 
     <section className="mx-auto max-w-6xl px-5 py-16 lg:px-8 lg:py-20"><div className="rounded-2xl border border-cyan-300/30 bg-cyan-300/[.06] p-7 sm:p-10"><div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center"><div><div className="mb-5 flex items-center gap-3"><div className="grid size-10 place-items-center rounded-full bg-cyan-300 text-[#0a0d14]"><ShieldCheck size={21} /></div><p className="text-xs font-semibold uppercase tracking-[.2em] text-cyan-200">The clean handoff guarantee</p></div><h2 className="max-w-2xl text-3xl font-semibold tracking-[-.03em] text-white sm:text-4xl">You only pay when the finish is flawless.</h2><p className="mt-4 max-w-xl text-sm leading-6 text-slate-400">Before your keys are handed back, we inspect every panel under color-match inspection lights together. No surprises. No rushed handoff.</p></div><a href="#estimator" className="rounded-lg bg-cyan-300 px-5 py-3 text-center text-sm font-semibold text-[#0a0d14]">Build my estimate <ArrowRight className="ml-2 inline" size={16} /></a></div></div></section>
 
+    {showTextDemo && <TextExpertDemo onClose={() => setShowTextDemo(false)} />}
+
     <footer className="border-t border-slate-800 px-5 py-10 lg:px-8"><div className="mx-auto flex max-w-6xl flex-col gap-6 text-xs text-slate-500"><div className="flex flex-col justify-between gap-5 sm:flex-row"><div><p className="font-semibold text-slate-300">{siteConfig.shopName} <span className="font-normal text-slate-600">/ {siteConfig.descriptor}</span></p><p className="mt-2 flex items-center gap-2"><MapPin size={13} /> {siteConfig.location}</p></div><div className="flex gap-5 sm:items-end"><span className="flex items-center gap-2"><Clock3 size={13} /> Mon–Sat · 8am–6pm</span><span>{siteConfig.phone}</span></div></div><p className="max-w-5xl text-sm leading-6 text-white">By signing up, you consent to receive text messages from Seattle Auto Detail and Tint, including conversational and automated messages regarding your automotive services, updates, and marketing messages. Message frequency may vary. Message and data rates may apply. Text HELP for assistance or STOP to cancel. Consent can be revoked at any time. By receiving, you agree to our Privacy Policy and Terms and Conditions.</p></div></footer>
   </main>
 }
@@ -45,3 +48,34 @@ export function ProtectionEngine() {
 function Trust({ icon, text }: { icon: React.ReactNode, text: string }) { return <div className="flex items-center gap-3 text-xs text-slate-400">{<span className="text-cyan-300">{icon}</span>}{text}</div> }
 function Fieldset({ label, children }: { label: string, children: React.ReactNode }) { return <fieldset className="mb-6"><legend className="mb-3 text-xs font-medium text-slate-300">{label}</legend><div className="grid grid-cols-1 gap-3 sm:grid-cols-3">{children}</div></fieldset> }
 function Success() { return <div className="py-8 text-center"><div className="mx-auto grid size-14 place-items-center rounded-full bg-cyan-300 text-[#0a0d14]"><Check size={28} /></div><h3 className="mt-5 text-2xl font-semibold text-white">Your estimate is on its way.</h3><p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-slate-400">We just texted your detailed breakdown and current bay openings. Marcus will follow up shortly.</p><div className="mx-auto mt-7 max-w-xs rounded-2xl border border-slate-700 bg-[#0a0d14] p-4 text-left"><p className="text-[10px] text-slate-500">MESSAGES · NOW</p><p className="mt-3 text-xs leading-5 text-slate-300">Hey there, Marcus here from the bay. Got your request. We have 2 coating bays open this Thursday. Here is your preliminary estimate breakdown…</p></div></div> }
+
+function TextExpertDemo({ onClose }: { onClose: () => void }) {
+  const thread = [
+    { from: 'you', time: 'Now', text: 'Hey, can someone tell me about pricing for ceramic coating on my SUV?' },
+    { from: 'bot', time: 'Instant reply', text: 'Thanks for reaching out to Apex Studio! An automated assistant here — I can get you a ballpark right away. Full-size SUV ceramic packages typically run $1,050–$1,400 depending on paint condition. Want the exact breakdown texted to you?' },
+    { from: 'you', time: '12s later', text: 'Yes please' },
+    { from: 'bot', time: 'Instant reply', text: 'Sending it now. A certified installer (Marcus) will also follow up within the hour to confirm bay availability and answer any other questions.' },
+  ]
+  return (
+    <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4" onClick={onClose}>
+      <div onClick={e => e.stopPropagation()} className="w-full max-w-sm rounded-2xl border border-slate-700 bg-[#111827] p-5 shadow-2xl">
+        <div className="mb-4 flex items-center justify-between">
+          <div className="flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[.12em] text-cyan-200">
+            <span className="size-1.5 rounded-full bg-cyan-300" /> Demo preview
+          </div>
+          <button onClick={onClose} aria-label="Close demo preview" className="rounded-full p-1 text-slate-500 transition hover:text-white"><X size={16} /></button>
+        </div>
+        <p className="mb-4 text-xs leading-5 text-slate-500">This is a sample conversation showing what an automated text follow-up could look like — no real message is sent.</p>
+        <div className="space-y-3">
+          {thread.map((msg, i) => (
+            <div key={i} className={`flex flex-col ${msg.from === 'you' ? 'items-end' : 'items-start'}`}>
+              <p className="mb-1 px-1 text-[10px] text-slate-600">{msg.from === 'you' ? 'You' : 'Automated assistant'} · {msg.time}</p>
+              <p className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-xs leading-5 ${msg.from === 'you' ? 'bg-cyan-300 text-[#0a0d14]' : 'border border-slate-700 bg-[#0a0d14] text-slate-300'}`}>{msg.text}</p>
+            </div>
+          ))}
+        </div>
+        <button onClick={onClose} className="mt-5 w-full rounded-lg bg-cyan-300 px-5 py-3 text-sm font-semibold text-[#0a0d14] transition hover:bg-cyan-200">Got it</button>
+      </div>
+    </div>
+  )
+}
