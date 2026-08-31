@@ -1,5 +1,5 @@
 export const siteConfig = {
-  shopName: 'Apex Studio',
+  shopName: 'Seattle Auto Detail and Tint',
   descriptor: 'Seattle Auto Detail & Tint · Demo',
   location: 'Airport Way S, Seattle, WA',
   city: 'Seattle',
@@ -17,8 +17,8 @@ export const siteConfig = {
   faqs: [
     { question: 'How much does ceramic coating cost in Seattle?', answer: 'Ceramic coating in Seattle typically starts at $895 for a professionally prepared vehicle. Final pricing depends on vehicle size, paint condition, correction needs, and the selected warranty duration. Every estimate includes a visual inspection before work begins.' },
     { question: 'Why is ceramic coating necessary for Pacific Northwest winter driving?', answer: 'Ceramic coating helps Seattle vehicles shed rain, road grime, and winter salt more easily. Its hydrophobic surface reduces bonded contamination and simplifies washing, while the cured film adds durable gloss and chemical resistance to properly prepared paint.' },
-    { question: 'Can I drive my vehicle in the rain immediately after application?', answer: 'No. Fresh ceramic coatings need a controlled cure before exposure to rain or standing water. Apex Studio provides a protected handoff window and clear aftercare instructions, so your vehicle leaves only when the finish is ready for Seattle weather.' },
-    { question: 'Do you offer loaner cars or rental options during multi-day cures?', answer: 'Loaner and rental options vary by appointment and package. During the estimate, Apex Studio confirms the expected bay time and can recommend a practical mobility plan before your vehicle is checked in for a multi-day protection service.' },
+    { question: 'Can I drive my vehicle in the rain immediately after application?', answer: 'No. Fresh ceramic coatings need a controlled cure before exposure to rain or standing water. Seattle Auto Detail and Tint provides a protected handoff window and clear aftercare instructions, so your vehicle leaves only when the finish is ready for Seattle weather.' },
+    { question: 'Do you offer loaner cars or rental options during multi-day cures?', answer: 'Loaner and rental options vary by appointment and package. During the estimate, Seattle Auto Detail and Tint confirms the expected bay time and can recommend a practical mobility plan before your vehicle is checked in for a multi-day protection service.' },
   ],
 } as const
 
