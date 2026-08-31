@@ -21,8 +21,8 @@ export function ProtectionEngine() {
   return <main className="min-h-screen overflow-hidden bg-[#0a0d14] text-slate-100">
     <header className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 lg:px-8">
       <div className="flex items-center gap-3"><div className="grid size-9 place-items-center rounded-lg bg-cyan-300 text-[#0a0d14]"><Sparkles size={18} /></div><div><p className="text-sm font-semibold tracking-tight">{siteConfig.shopName}</p><p className="text-[10px] uppercase tracking-[.22em] text-slate-500">Protection systems</p></div></div>
-      <a href={`tel:${siteConfig.phone}`} className="hidden items-center gap-2 text-xs font-medium text-slate-300 transition hover:text-cyan-300 sm:flex"><Phone size={14} /> {siteConfig.phone}</a>
-      <a href="#estimator" className="rounded-full border border-slate-700 px-4 py-2 text-xs font-medium text-slate-200 transition hover:border-cyan-400 hover:text-cyan-300">Get estimate <ArrowRight className="ml-1 inline" size={13} /></a>
+      <span className="hidden items-center gap-2 text-xs font-medium text-slate-500 sm:flex"><Phone size={14} /> Your phone number here</span>
+      <a href="#estimator" className="rounded-full border border-slate-700 px-4 py-2 text-xs font-medium text-slate-200 transition hover:border-cyan-400 hover:text-cyan-300">Build my estimate <ArrowRight className="ml-1 inline" size={13} /></a>
     </header>
 
     <section className="relative mx-auto max-w-6xl px-5 pb-16 pt-10 lg:px-8 lg:pb-24 lg:pt-20"><div className="pointer-events-none absolute -right-40 top-0 size-[500px] rounded-full bg-cyan-400/10 blur-[120px]" />
