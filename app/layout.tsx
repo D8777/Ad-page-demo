@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Seattle Auto Detail and Tint | Paint Defense Engineered for Seattle Weather',
-  description: 'Transparent ceramic coating, ceramic tint, and Pacific Northwest winter defense estimates from Seattle Auto Detail and Tint.',
+  title: 'Apex Studio | Paint Defense Engineered for Seattle Weather',
+  description: 'Transparent ceramic coating, ceramic tint, and Pacific Northwest winter defense estimates from Apex Studio.',
   generator: 'v0.app',
   icons: {
     icon: [
